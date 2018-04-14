@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+body {
+    background-image: url("./assets/img/table.jpg");
+    color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
