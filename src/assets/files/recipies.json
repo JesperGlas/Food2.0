@@ -1,0 +1,116 @@
+[
+  {
+    "id": 0,
+    "title":  "Linsgryta",
+    "desc": "En soft linsgryta.",
+    "ingredients":[
+      [2, "dl", "Linser"],
+      [2, "st", "Gula Lökar"],
+      [10, "dl", "Samba Olek"],
+      [5, "dl", "Kokosmjölk"]
+    ],
+    "method":[
+      "Du börjar med att hacka och bryna löken",
+      "Efter det häller du i linserna",
+      "Öppna burken med kokosmjölk"
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Frepps PyttiPanna",
+    "desc": "Frepp och Findus levererar husmanskost.",
+    "ingredients":[
+      [1, "st", "Findus Frysta PyttiPanna"],
+      [1, "st", "Heinz Ketchup"]
+    ],
+    "method":[
+      "Sätt spisen på medelhög värme, typ 7 av 9",
+      "Häll hela förpackningen i stekpannan",
+      "Gå och gör nått annat tills maten är klar"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Långkok Högrev",
+    "desc": "Najs med kött.",
+    "ingredients":[
+      [450, "g", "Högrev"],
+      [15, "ml", "Smör"],
+      [2, "st", "Morötter"],
+      [1, "st", "Gul Lök"],
+      [2, "st", "Vitlöksklyftor"],
+      [1, "dl", "Rött Vin"]
+    ],
+    "method":[
+      "Finhacka vitlök och fräs med smör i gjutjärnsgrytan",
+      "Skär löken i klyftor och häll i den i grytan",
+      "Skär köttet i 2x2cm tärningar och fräs det tills det fått färg",
+      "Häll i vinet och sänk värmen"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Ramen Nudlar",
+    "desc": "Överkokta nudlar, mums!",
+    "ingredients":[
+      [1, "pkt", "Ramens nudlar"],
+      [3, "dl", "Vatten"]
+    ],
+    "method":[
+      "Koka upp vatten i en kastrull",
+      "När det kokar, ta av den från plattan och lägg i nudlarna",
+      "Låt ligga i 3 minuter",
+      "Häll av vattnet och häll i kryddan"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Haloumi Burgare",
+    "desc": "Bra burgare på haloumi.",
+    "ingredients":[
+      [250, "g", "Hamoumi"],
+      [1, "", "Bröd"],
+      [1, "st", "Tomat"]
+    ],
+    "method":[
+      "Stek haloumin på låg värme i sitt eget vatten samt lite olja",
+      "Skär upp grönsakerna",
+      "Värm på brödet efter egen smak, lite frasigt rekomenderas"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Faffes Falafel",
+    "desc": "Kryddig falafel med chilipotatis, tomatsalsa och vitlöksyoghurt.",
+    "ingredients":[
+      [70, "g", "Babyspenat"],
+      [1, "st", "Bakpotatis"],
+      [1, "st", "Citron"],
+      [1, "st", "Gul Lök"],
+      [700, "g", "Kikärter"],
+      [2, "dl", "Matyoghurt"],
+      [0,5, "kruka", "Persilja"],
+      [1, "st", "Rödlök"],
+      [3, "st", "Tomat"],
+      [1, "st", "Tortillabröd"],
+      [2, "klyfta", "Vitlök"],
+      [4, "krm", "Cayennepeppar"],
+      [2, "tsk", "Malen Koriander"],
+      [1, "tsk", "Salt"],
+      [1, "dl", "Vetemjöl"],
+      ["", "", "Flytande Honung"],
+      ["", "", "Olivolja"],
+      ["", "", "Spiskummin"],
+      ["", "", "Ströbröd"]
+    ],
+    "method":[
+      "Värm ugnen till 250 grader.",
+      "Chilipotatis: Tärna 1 bakpotatis och lägg i en smord ugnsform. Blanda med lite olivolja, 2 krm cayennepeppar och 1 krm salt. Tillaga i övre delen av ugnen 15-20 min.",
+      "Vitlöksyoghurt: Blanda 2 dl matyoghurt, 1 vitlöksklyfta(Pressad), 1/2 tsk flytande honung och 1 krm salt i en skål.",
+      "Tomatsalsa: Tärna 3 st tomater. Finhacka 1/2 rödlök och grovhacka 1/2 kruka persilja. Lägg i en skål och blanda med 2 tsk olivolja, pressad saft från 1/2 citron, 2 krm cayennepeppar och 1 krm salt.",
+      "Falafel: Grovhacka 1 gul lök och lägg i en mixerbunke. Tillsätt 1/2 kruka persilja, 2 förp kikärter (Sköljda och avrunna), 1 vitlöksklyfta (Pressad), 2 tsk spiskummin, 2 tsk malen koriander, 1 tsk salt, 2 krm cayennepeppar och 1 dl vetemjöl. Mixa till en fast smet.",
+      "Forma smeten till 16 små biffar och vänd dem i ströbröd. Hetta upp lite olivolja i en stekpanna och stek biffarna i 2-3 min per sida, tills de är frasiga.",
+      "Fyll förp tortilliabröd med 1/2 förp babyspenat (Sköljd), falafel, chilipotatis, tomatsalsa och vitlöksyoghurt. Servera direkt."
+    ]
+  }
+]
