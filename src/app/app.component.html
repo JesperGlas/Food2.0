@@ -17,16 +17,16 @@
   <div fxLayout="column" class="wrapper">
     <h1>{{ recipie_list[current_recipie].title }} #{{ current_recipie }} of {{ recipie_list.length }}</h1>
     <div fxFlex>
-      <h2 fxHide.sm>Beskrivning</h2>
-        <button mat-button fxHide.gt-sm (click)='desc_toggle=!desc_toggle'>
+      <h2 fxHide.md fxHide.lt-md>Beskrivning</h2>
+        <button mat-button fxHide.gt-md (click)='desc_toggle=!desc_toggle'>
           <h2>Beskrivning</h2>
         </button>
       <p style="margin-left: 20px" *ngIf="desc_toggle">{{ recipie_list[current_recipie].desc }}</p>
     </div>
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex>
-        <h2 fxHide.sm>Ingridienser</h2>
-        <button mat-button fxHide.gt-sm (click)='ingr_toggle=!ingr_toggle'>
+        <h2 fxHide.md fxHide.lt-md>Ingridienser</h2>
+        <button mat-button fxHide.gt-md (click)='ingr_toggle=!ingr_toggle'>
           <h2>Ingridienser</h2>
         </button>
         <table *ngIf="ingr_toggle">
@@ -44,8 +44,8 @@
       </table>
     </div>
     <div fxFlex>
-      <h2 fxHide.sm>Metod</h2>
-      <button mat-button fxHide.gt-sm (click)='method_toggle=!method_toggle'>
+      <h2 fxHide.md fxHide.lt-md>Metod</h2>
+      <button mat-button fxHide.gt-md (click)='method_toggle=!method_toggle'>
           <h2>Metod</h2>
         </button>
       <table *ngIf="method_toggle">
