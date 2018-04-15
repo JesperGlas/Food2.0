@@ -1,7 +1,6 @@
 [
   {
-    "id": 0,
-    "title":  "Linsgryta",
+    "name":  "Linsgryta",
     "desc": "En soft linsgryta.",
     "port": 4,
     "ingredients":[
@@ -17,8 +16,7 @@
     ]
   },
   {
-    "id": 1,
-    "title": "Frepps PyttiPanna",
+    "name": "Frepps PyttiPanna",
     "desc": "Frepp och Findus levererar husmanskost.",
     "port": 4,
     "ingredients":[
@@ -32,8 +30,7 @@
     ]
   },
   {
-    "id": 2,
-    "title": "Långkok Högrev",
+    "name": "Långkok Högrev",
     "desc": "Najs med kött.",
     "port": 4,
     "ingredients":[
@@ -52,8 +49,7 @@
     ]
   },
   {
-    "id": 3,
-    "title": "Ramen Nudlar",
+    "name": "Ramen Nudlar",
     "desc": "Överkokta nudlar, mums!",
     "port": 1,
     "ingredients":[
@@ -68,8 +64,7 @@
     ]
   },
   {
-    "id": 4,
-    "title": "Haloumi Burgare",
+    "name": "Haloumi Burgare",
     "desc": "Bra burgare på haloumi.",
     "port": 1,
     "ingredients":[
@@ -84,8 +79,7 @@
     ]
   },
   {
-    "id": 5,
-    "title": "Faffes Falafel",
+    "name": "Faffes Falafel",
     "desc": "Kryddig falafel med chilipotatis, tomatsalsa och vitlöksyoghurt.",
     "port": 4,
     "ingredients":[
@@ -95,7 +89,7 @@
       [1, "st", "Gul Lök"],
       [700, "g", "Kikärter"],
       [2, "dl", "Matyoghurt"],
-      [0,5, "kruka", "Persilja"],
+      [0.5, "kruka", "Persilja"],
       [1, "st", "Rödlök"],
       [3, "st", "Tomat"],
       [1, "st", "Tortillabröd"],
@@ -120,8 +114,7 @@
     ]
   },
   {
-    "id": 6,
-    "title": "Chèvrerisotto",
+    "name": "Chèvrerisotto",
     "desc": "Chèvrerisotto med honungsrostade rödbetor och solrosfrön.",
     "port": 4,
     "ingredients":[
@@ -134,11 +127,11 @@
       [600, "g", "Rödbetor"],
       [1, "kruka", "Timjan"],
       [2, "st", "Vitlöksklyftor"],
-      [0,5, "tsk", "Flytande Honung"],
+      [0.5, "tsk", "Flytande Honung"],
       [2, "tärningar", "Grönsaksbuljong"],
       [1, "krm", "Salt"],
-      [0,75, "msk", "Olivolja"],
-      [2,5, "msk", "Vitvinsvinäger"]
+      [0.75, "msk", "Olivolja"],
+      [2.5, "msk", "Vitvinsvinäger"]
     ],
     "method":[
       "Värm ugnen till 250 grader.",

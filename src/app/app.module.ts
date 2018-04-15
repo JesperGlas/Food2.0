@@ -9,7 +9,10 @@ import {
   MatCardModule,
   MatButtonModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatListModule,
+  MatGridListModule,
+  MatButtonToggleModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -28,7 +31,10 @@ import { FetchJsonService } from './shared/fetch-json.service';
     MatCardModule,
     MatButtonModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatListModule,
+    MatGridListModule,
+    MatButtonToggleModule
   ],
   providers: [FetchJsonService],
   bootstrap: [AppComponent]

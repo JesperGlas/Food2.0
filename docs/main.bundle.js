@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".wrapper {\n    width: 1200px;\n    padding: 20px;\n    font-size: 18px;\n}\n\ntable {\n    margin-left: 20px;\n}"
+module.exports = ".wrapper {\n    width: 1200px;\n    padding: 20px;\n    font-size: 18px;\n}\n\ntd {\n    padding-right: 15px;\n}"
 
 /***/ }),
 
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>\n      <h1>{{ title }}</h1>\n    </span>\n    <span class=\"fill-remaining-space\"></span>\n    <span>\n      <button mat-icon-button (click)='randomRecipie()'>\n        <i class=\"fas fa-random\"></i>\n      </button>\n    </span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div fxLayout=\"row\" fxLayoutAlign.gt-sm=\"center\">\n  <div fxLayout=\"column\" class=\"wrapper\">\n    <h2>{{ recipie_list[current_index].title }}</h2>\n    <div fxFlex>\n      <p style=\"margin-left: 20px\">\n        Recipie #{{ current_index+1 }}\n        <br>\n        {{ recipie_list[current_index].port }} port\n        <br>\n        {{ recipie_list[current_index].desc }}\n      </p>\n    </div>\n    <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\n      <div fxFlex>\n        <h3 fxHide.md fxHide.lt-md>Ingridienser</h3>\n        <button mat-button fxHide.gt-md (click)='ingr_toggle=!ingr_toggle'>\n          <h3>Ingridienser</h3>\n        </button>\n        <table *ngIf=\"ingr_toggle\">\n          <tr *ngFor=\"let item of recipie_list[current_index].ingredients\">\n            <td>\n              {{ item[0] }}\n            </td>\n            <td>\n              {{ item[1] }}\n            </td>\n          <td>\n            {{ item[2] }}\n          </td>\n        </tr>\n      </table>\n    </div>\n    <div fxFlex>\n      <h3 fxHide.md fxHide.lt-md>Metod</h3>\n      <button mat-button fxHide.gt-md (click)='method_toggle=!method_toggle'>\n          <h3>Metod</h3>\n        </button>\n      <table *ngIf=\"method_toggle\">\n        <tr *ngFor=\"let item of recipie_list[current_index].method; let i = index\">\n          <td>\n            {{ i+1 }}. {{ item }}\n          </tr>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<!-- Toolbar area -->\n<mat-toolbar>\n  <mat-toolbar-row>\n    <span>\n      <h1>{{ title }}</h1>\n    </span>\n    <span class=\"fill-remaining-space\"></span>\n    <span>\n    <button mat-icon-button (click)='filter_toggle=!filter_toggle'>\n        <i class=\"material-icons\">filter_list</i>\n      </button>\n      <button mat-icon-button (click)='randomRecipie()'>\n        <i class=\"fas fa-random\"></i>\n      </button>\n    </span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div fxLayout=\"row\" fxLayoutAlign.gt-sm=\"center\">\n  <div fxLayout=\"column\" class=\"wrapper\">\n    <!-- Filter Sections -->\n    <div *ngIf=\"filter_toggle\">\n      <h2>Filter</h2>\n      <div>\n        <mat-button-toggle *ngFor=\"let item of ingridients_list; let i = index\" (click)=toggleIngridient(i)>\n          {{ item.name }}\n        </mat-button-toggle>\n      </div>\n    </div>\n\n    <!-- Recipie section -->\n    <h2>{{ recipie_list[current_index].name }}</h2>\n    <div fxFlex>\n      <p>\n        Recipie #{{ current_index+1 }}\n        <br>\n        {{ recipie_list[current_index].port }} port\n        <br><br>\n        {{ recipie_list[current_index].desc }}\n      </p>\n    </div>\n\n    <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\n      <div fxFlex>\n        <h3 fxHide.md fxHide.lt-md>Ingridienser</h3>\n        <button mat-button fxHide.gt-md (click)='ingr_toggle=!ingr_toggle'>\n          <h3>Ingridienser</h3>\n        </button>\n        <table *ngIf=\"ingr_toggle\">\n          <tr *ngFor=\"let item of recipie_list[current_index].ingredients\">\n            <td style=\"text-align: left\">\n              {{ item[0] }} {{ item[1] }}\n            </td>\n          <td>\n            {{ item[2] }}\n          </td>\n        </tr>\n      </table>\n    </div>\n\n    <div fxFlex>\n      <h3 fxHide.md fxHide.lt-md>Metod</h3>\n      <button mat-button fxHide.gt-md (click)='method_toggle=!method_toggle'>\n        <h3>Metod</h3>\n      </button>\n      <table *ngIf=\"method_toggle\">\n        <tr *ngFor=\"let item of recipie_list[current_index].method; let i = index\">\n          <td>\n            {{ i+1 }}.\n          </td>\n          <td>\n            <p>\n              {{ item }}\n            </p>  \n          </td>\n        </tr>\n      </table>\n    </div>\n\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -56,7 +56,9 @@ var AppComponent = /** @class */ (function () {
     Functions
     ####################################################################################################
     */
+    /* The consturctor fetches the recipies from the recipie.JSON using the fetchJSONService. It stores it in the recipe_list variable */
     function AppComponent(fetchJSONService) {
+        var _this = this;
         this.fetchJSONService = fetchJSONService;
         /*
       Variables
@@ -64,28 +66,57 @@ var AppComponent = /** @class */ (function () {
       */
         /* Title of the site */
         this.title = 'MatInspo';
+        /* URL Variables */
+        this.recipies_url = "assets/files/recipies.json";
+        this.ingridients_url = "assets/files/ingridients.json";
+        /* Variable that determines which recipie is currently showing */
         this.current_index = 5;
+        this.toggledIngridientsList = [];
+        /* Toggle Variables */
+        this.filter_toggle = true;
         this.ingr_toggle = true;
         this.method_toggle = true;
-    }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.fetchJSONService.getPosts()
+        // Fetches the recipies
+        this.fetchJSONService.getPosts(this.recipies_url)
             .subscribe(function (data) {
             _this.recipie_list = data;
             console.log(data);
         }, function (error) { return console.log(error); });
-        console.log('Ran ngOnInit function');
+        // Fetches the Ingridients
+        this.fetchJSONService.getPosts(this.ingridients_url)
+            .subscribe(function (data) {
+            _this.ingridients_list = data;
+            console.log(data);
+        }, function (error) { return console.log(error); });
+    }
+    AppComponent.prototype.ngOnInit = function () {
     };
     /* Function which returns a random number between max and min variables */
     AppComponent.prototype.getRandomInt = function (min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
-    /* Function which sets the current_index to a random number within the allowed scope */
+    /* Function which sets the current_index to a random number within the allowed scope and different from previous current_index */
     AppComponent.prototype.randomRecipie = function () {
-        this.current_index = this.getRandomInt(0, this.recipie_list.length - 1);
-        this.current_recipie = this.recipie_list[this.current_index];
-        console.log('New current_index is: ' + this.current_index);
+        var temp_number = this.current_index;
+        // The function makes sure that it's not the same recipie as the current one
+        while (temp_number == this.current_index) {
+            temp_number = this.getRandomInt(0, this.recipie_list.length - 1);
+        }
+        this.current_index = temp_number;
+    };
+    AppComponent.prototype.toggleIngridient = function (index) {
+        var duplicate = false;
+        for (var i = 0; i < this.toggledIngridientsList.length; i++) {
+            if (index = this.toggledIngridientsList[i]) {
+                duplicate = true;
+                console.log('Index ' + index + ' was already in list, nothing added');
+            }
+        }
+        if (duplicate == false) {
+            this.toggledIngridientsList.push(index);
+            console.log('Index ' + index + ' was not in list and is now added');
+        }
+        return duplicate;
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -143,10 +174,13 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_flex_layout__["a" /* FlexLayoutModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatCardModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatCardModule */],
                 __WEBPACK_IMPORTED_MODULE_5__angular_material__["a" /* MatButtonModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_material__["c" /* MatTableModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatToolbarModule */]
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["f" /* MatTableModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["g" /* MatToolbarModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["e" /* MatListModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["d" /* MatGridListModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_material__["b" /* MatButtonToggleModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_7__shared_fetch_json_service__["a" /* FetchJsonService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
@@ -183,8 +217,8 @@ var FetchJsonService = /** @class */ (function () {
     function FetchJsonService(_http) {
         this._http = _http;
     }
-    FetchJsonService.prototype.getPosts = function () {
-        return this._http.get('assets/files/recipies.json')
+    FetchJsonService.prototype.getPosts = function (url) {
+        return this._http.get(url)
             .map(function (response) {
             var data = response.json();
             return data;

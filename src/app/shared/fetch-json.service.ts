@@ -10,8 +10,8 @@ export class FetchJsonService {
 
   constructor(private _http: Http) { }
 
-  getPosts() {
-    return this._http.get('assets/files/recipies.json')
+  getPosts(url:string) {
+    return this._http.get(url)
                       .map(
                         (response: Response) => {
                           const data = response.json();
