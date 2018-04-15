@@ -3,6 +3,7 @@
     "id": 0,
     "title":  "Linsgryta",
     "desc": "En soft linsgryta.",
+    "port": 4,
     "ingredients":[
       [2, "dl", "Linser"],
       [2, "st", "Gula Lökar"],
@@ -19,6 +20,7 @@
     "id": 1,
     "title": "Frepps PyttiPanna",
     "desc": "Frepp och Findus levererar husmanskost.",
+    "port": 4,
     "ingredients":[
       [1, "st", "Findus Frysta PyttiPanna"],
       [1, "st", "Heinz Ketchup"]
@@ -33,6 +35,7 @@
     "id": 2,
     "title": "Långkok Högrev",
     "desc": "Najs med kött.",
+    "port": 4,
     "ingredients":[
       [450, "g", "Högrev"],
       [15, "ml", "Smör"],
@@ -52,6 +55,7 @@
     "id": 3,
     "title": "Ramen Nudlar",
     "desc": "Överkokta nudlar, mums!",
+    "port": 1,
     "ingredients":[
       [1, "pkt", "Ramens nudlar"],
       [3, "dl", "Vatten"]
@@ -67,6 +71,7 @@
     "id": 4,
     "title": "Haloumi Burgare",
     "desc": "Bra burgare på haloumi.",
+    "port": 1,
     "ingredients":[
       [250, "g", "Hamoumi"],
       [1, "", "Bröd"],
@@ -82,6 +87,7 @@
     "id": 5,
     "title": "Faffes Falafel",
     "desc": "Kryddig falafel med chilipotatis, tomatsalsa och vitlöksyoghurt.",
+    "port": 4,
     "ingredients":[
       [70, "g", "Babyspenat"],
       [1, "st", "Bakpotatis"],
@@ -111,6 +117,39 @@
       "Falafel: Grovhacka 1 gul lök och lägg i en mixerbunke. Tillsätt 1/2 kruka persilja, 2 förp kikärter (Sköljda och avrunna), 1 vitlöksklyfta (Pressad), 2 tsk spiskummin, 2 tsk malen koriander, 1 tsk salt, 2 krm cayennepeppar och 1 dl vetemjöl. Mixa till en fast smet.",
       "Forma smeten till 16 små biffar och vänd dem i ströbröd. Hetta upp lite olivolja i en stekpanna och stek biffarna i 2-3 min per sida, tills de är frasiga.",
       "Fyll förp tortilliabröd med 1/2 förp babyspenat (Sköljd), falafel, chilipotatis, tomatsalsa och vitlöksyoghurt. Servera direkt."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Chèvrerisotto",
+    "desc": "Chèvrerisotto med honungsrostade rödbetor och solrosfrön.",
+    "port": 4,
+    "ingredients":[
+      [300, "g", "Arborioris"],
+      [0,5, "förp", "Babyspenat"],
+      [1, "förp", "Chèvreost"],
+      [1, "st", "Fänkål"],
+      [1, "st", "Gul Lök"],
+      [1, "dl", "Rostade Solrosfrön"],
+      [600, "g", "Rödbetor"],
+      [1, "kruka", "Timjan"],
+      [2, "st", "Vitlöksklyftor"],
+      [0,5, "tsk", "Flytande Honung"],
+      [2, "tärningar", "Grönsaksbuljong"],
+      [1, "krm", "Salt"],
+      [0,75, "msk", "Olivolja"],
+      [2,5, "msk", "Vitvinsvinäger"]
+    ],
+    "method":[
+      "Värm ugnen till 250 grader.",
+      "Honungsrostade rödbetor: Skala och skär ca 600 g rödbetor i små klyftor. Lägg i en smord ugnsform och blanda med lite olivolja, 1 msk flytande honung och 2 krm salt. Tillaga i övre delen av ugnen 25-30 min.",
+      "Buljong: Koka upp 1 l vatten med 2 tärningar grönsaksbuljong och 1 msk vitvinsvinäger. Dra bort kastrullen från värmen.",
+      "Risotto: Finhacka 1 gul lök och 2 vitlöksklyftor. Hetta upp 1 msk olivolja i en rymlig stekgryta. Fräs all lök och 300 g arborioris 1 min.",
+      "Späd risotton med den varma buljongen, lite i taget. När det kokat in, tilsätt mer och fortsätt så tills all buljong är slut, totalt ca 20 min. Rör då och då.",
+      "Sallad: Halvera 1 fänkål och skär bort roten. Finstrimla fänkålen och lägg på ett fat tillsammans med 0,5 förp babyspenat(Sköljd).",
+      "Dressing: Finhacka 1 kruka timjan och lägg i en skål. Blanda ner 1,5 msk vitvinsvinäger, 0,75 msk olivolja, 0,5 tsk flytande honung och 1 krm salt.",
+      "Lägg de rostade rödbetorna på grönsaksfatet och blanda med 1 dl rostade solrosfrön och dressingen.",
+      "Smula 1 förp chèvreost och blanda ner i rosotton. Servera direkt tillsammans med honungsrostade rödbetor."
     ]
   }
 ]

@@ -27,7 +27,7 @@ module.exports = ".wrapper {\n    width: 1200px;\n    padding: 20px;\n    font-s
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>\n      <h1>{{ title }}</h1>\n      {{ recipies_amount }}\n    </span>\n    <span class=\"fill-remaining-space\"></span>\n    <span>\n      <button mat-icon-button (click)='randomRecipie()'>\n        <i class=\"fas fa-random\"></i>\n      </button>\n    </span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div fxLayout=\"row\" fxLayoutAlign.gt-sm=\"center\">\n  <div fxLayout=\"column\" class=\"wrapper\">\n    <h1>{{ recipie_list[current_recipie].title }} #{{ current_recipie }} of {{ recipie_list.length }}</h1>\n    <div fxFlex>\n      <h2 fxHide.md fxHide.lt-md>Beskrivning</h2>\n        <button mat-button fxHide.gt-md (click)='desc_toggle=!desc_toggle'>\n          <h2>Beskrivning</h2>\n        </button>\n      <p style=\"margin-left: 20px\" *ngIf=\"desc_toggle\">{{ recipie_list[current_recipie].desc }}</p>\n    </div>\n    <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\n      <div fxFlex>\n        <h2 fxHide.md fxHide.lt-md>Ingridienser</h2>\n        <button mat-button fxHide.gt-md (click)='ingr_toggle=!ingr_toggle'>\n          <h2>Ingridienser</h2>\n        </button>\n        <table *ngIf=\"ingr_toggle\">\n          <tr *ngFor=\"let item of recipie_list[current_recipie].ingredients\">\n            <td>\n              {{ item[0] }}\n            </td>\n            <td>\n              {{ item[1] }}\n            </td>\n          <td>\n            {{ item[2] }}\n          </td>\n        </tr>\n      </table>\n    </div>\n    <div fxFlex>\n      <h2 fxHide.md fxHide.lt-md>Metod</h2>\n      <button mat-button fxHide.gt-md (click)='method_toggle=!method_toggle'>\n          <h2>Metod</h2>\n        </button>\n      <table *ngIf=\"method_toggle\">\n        <tr *ngFor=\"let item of recipie_list[current_recipie].method; let i = index\">\n          <td>\n            {{ i+1 }}. {{ item }}\n          </tr>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <span>\n      <h1>{{ title }}</h1>\n    </span>\n    <span class=\"fill-remaining-space\"></span>\n    <span>\n      <button mat-icon-button (click)='randomRecipie()'>\n        <i class=\"fas fa-random\"></i>\n      </button>\n    </span>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<div fxLayout=\"row\" fxLayoutAlign.gt-sm=\"center\">\n  <div fxLayout=\"column\" class=\"wrapper\">\n    <h2>{{ recipie_list[current_index].title }}</h2>\n    <div fxFlex>\n      <p style=\"margin-left: 20px\">\n        Recipie #{{ current_index+1 }}\n        <br>\n        {{ recipie_list[current_index].port }} port\n        <br>\n        {{ recipie_list[current_index].desc }}\n      </p>\n    </div>\n    <div fxLayout=\"column\" fxLayout.gt-sm=\"row\">\n      <div fxFlex>\n        <h3 fxHide.md fxHide.lt-md>Ingridienser</h3>\n        <button mat-button fxHide.gt-md (click)='ingr_toggle=!ingr_toggle'>\n          <h3>Ingridienser</h3>\n        </button>\n        <table *ngIf=\"ingr_toggle\">\n          <tr *ngFor=\"let item of recipie_list[current_index].ingredients\">\n            <td>\n              {{ item[0] }}\n            </td>\n            <td>\n              {{ item[1] }}\n            </td>\n          <td>\n            {{ item[2] }}\n          </td>\n        </tr>\n      </table>\n    </div>\n    <div fxFlex>\n      <h3 fxHide.md fxHide.lt-md>Metod</h3>\n      <button mat-button fxHide.gt-md (click)='method_toggle=!method_toggle'>\n          <h3>Metod</h3>\n        </button>\n      <table *ngIf=\"method_toggle\">\n        <tr *ngFor=\"let item of recipie_list[current_index].method; let i = index\">\n          <td>\n            {{ i+1 }}. {{ item }}\n          </tr>\n        </table>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -64,8 +64,7 @@ var AppComponent = /** @class */ (function () {
       */
         /* Title of the site */
         this.title = 'MatInspo';
-        this.current_recipie = 5;
-        this.desc_toggle = true;
+        this.current_index = 5;
         this.ingr_toggle = true;
         this.method_toggle = true;
     }
@@ -76,15 +75,17 @@ var AppComponent = /** @class */ (function () {
             _this.recipie_list = data;
             console.log(data);
         }, function (error) { return console.log(error); });
+        console.log('Ran ngOnInit function');
     };
     /* Function which returns a random number between max and min variables */
     AppComponent.prototype.getRandomInt = function (min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
-    /* Function which sets the current_recipie to a random number within the allowed scope */
+    /* Function which sets the current_index to a random number within the allowed scope */
     AppComponent.prototype.randomRecipie = function () {
-        this.current_recipie = this.getRandomInt(0, this.recipie_list.length - 1);
-        console.log('New current_recipie is: ' + this.current_recipie);
+        this.current_index = this.getRandomInt(0, this.recipie_list.length - 1);
+        this.current_recipie = this.recipie_list[this.current_index];
+        console.log('New current_index is: ' + this.current_index);
     };
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
