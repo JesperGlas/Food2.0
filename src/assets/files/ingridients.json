@@ -1,0 +1,46 @@
+[
+    {
+        "id": 0,
+        "name": "Tomat"
+    },
+    {
+        "id": 1,
+        "name": "Sötpotatis"
+    },
+    {
+        "id": 2,
+        "name": "Timjan"
+    },
+    {
+        "id": 3,
+        "name": "Salt"
+    },
+    {
+        "id": 4,
+        "name": "Babyspenat"
+    },
+    {
+        "id": 5,
+        "name": "Bakpotatis"
+    },
+    {
+        "id": 6,
+        "name": "Citron"
+    },
+    {
+        "id": 7,
+        "name": "Gul Lök"
+    },
+    {
+        "id": 8,
+        "name": "Kikärter"
+    },
+    {
+        "id": 9,
+        "name": "Matyoghurt"
+    },
+    {
+        "id": 10,
+        "name": "Persilja"
+    }
+]
