@@ -1,3 +1,6 @@
+# Description
+A project to learn more Angular by exploring it. This particular one was supposed to be an online cookbook to randomize recipies and make shopping lists. No longer working on it.
+
 # Food
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
